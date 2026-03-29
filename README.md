@@ -14,8 +14,11 @@ curl -s https://core.telegram.org/getProxyConfig -o proxy-multi.conf
 2. Генерация секрета
 ```
 openssl rand -hex 16
+
+# секрет нужно прописать в docker-compose.yml
+
 ```
-секрет нужно прописать в docker-compose.yml
+
 3. Старт контейнера
 ```
 docker compose up -d
