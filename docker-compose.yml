@@ -1,0 +1,20 @@
+services:
+  mtproto-proxy:
+    image: srublev/mtproxy:latest
+    container_name: mtproto-proxy
+    restart: unless-stopped
+    environment:
+      SECRET: supersecret
+      USER_NAME: nobody
+      PORT: 8888
+      HTTP_PORT: 443
+      AES_PWD_FILE: /proxy-secret
+      CONFIG_FILE: /proxy-multi.conf
+      WORKERS: 1
+    #ports:
+    #  - "8888:8888"
+    #  - "443:443"
+    network_mode: "host"
+    volumes:
+      - ./proxy-secret:/proxy-secret:ro
+      - ./proxy-multi.conf:/proxy-multi.conf:ro
