@@ -34,9 +34,9 @@ docker compose up -d
 ```
 docker compose logs
 ```
-В логах также выводятся
-SECRET - секрет для работы без Fake TLS
-CLIENT_SECRET - секрет для работы через Fake TLS (должен начинаться с `ee`)
+В логах также выводятся:
+- SECRET - секрет для работы без Fake TLS
+- CLIENT_SECRET - секрет для работы через Fake TLS (должен начинаться с `ee`)
 
 
 ## Использование в клиенте
