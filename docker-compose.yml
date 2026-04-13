@@ -11,6 +11,7 @@ services:
       AES_PWD_FILE: /proxy-secret
       CONFIG_FILE: /proxy-multi.conf
       WORKERS: 1
+      FAKE_TLS_DOMAIN: example.com
     #ports:
     #  - "8888:8888"
     #  - "443:443"
