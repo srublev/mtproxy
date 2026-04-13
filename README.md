@@ -19,13 +19,36 @@ openssl rand -hex 16
 
 ```
 
-3. Старт контейнера
+3. Включение режима Fake TLS
+```
+Указать в docker-compose.yml переменную
+FAKE_TLS_DOMAIN: <какой-то популярный ресурс, поддерживающий https>
+```
+
+4. Старт контейнера
 ```
 docker compose up -d
 ```
 
+5. Проверить что в логах нет ошибок
+```
+docker compose logs
+```
+В логах также выводятся
+SECRET - секрет для работы без Fake TLS
+CLIENT_SECRET - секрет для работы через Fake TLS (должен начинаться с `ee`)
+
+
 ## Использование в клиенте
-ссылка для подключения proxy
+ссылка для подключения proxy без Fake TLS
 ```
 tg://proxy?server=<IP_ADRESS>&port=<PORT>&secret=<SECRET>
 ```
+
+ссылка для подключения proxy c Fake TLS
+```
+tg://proxy?server=<IP_ADRESS>&port=<PORT>&secret=<CLIENT_SECRET>
+```
+
+
+
